@@ -1,57 +1,29 @@
-# RANDOM-PASSWORD-GENERATOR
+# Password Generator
 
+A simple, modern password generator web app built with HTML, CSS, and JavaScript.
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport"content="width=device-width, initial-scale=1.0">
-    <title>Random Password Generator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
- <h1>Generate a <br><span> Random Password</span></h1>
- <div class="display">
- <input type="text" id="password" placeholder="Password">
-<img src="copy.png" onclick="copyPassword()">
- </div>
-<button onclick="createPassword()"><img src="generate.png">Generate Password</button>
- </div>
+## Features
 
-<script>
-    const passwordBox = document.getElementById("password");
-    const length =12;
+- Generate strong random passwords
+- Copy password to clipboard with one click
+- Clean, responsive UI
 
-    const uppercase ="ABCDEFGHIJKLMOPQRSTUVWXYZ";
-    const lowercase ="abcdefghijklmopqrstuvwxyz";
-    const number ="023456789";
-    const symbol ="@#$%^&*()_+{[><-=]}";
+## Usage
 
-    const allChars =uppercase + lowercase +number +symbol;
+1. Click "Generate Password" to create a new strong password.
+2. Click the copy icon to copy it to your clipboard.
 
-    function createPassword(){
-        let password = "";
-        password +=uppercase[Math.floor(Math.random() *uppercase.length)];
-        password +=lowercase[Math.floor(Math.random() *lowercase.length)];
-        password +=number[Math.floor(Math.random() *number.length)];
-        password +=symbol[Math.floor(Math.random() *symbol.length)];
+## Preview
 
-        while(length > password.length){
-              password +=allChars[Math.floor(Math.random() *allChars.length)];
+![Screenshot](images/screenshot.jpg) <!-- Add a screenshot if you want -->
 
-        }
-        passwordBox.value = password;
+## Technologies
 
-    }
+- HTML
+- CSS
+- JavaScript
 
-    function copyPassword(){
-        passwordBox.select();
-        document.execCommand("copy");
-    }
-</script>
+---
 
-    
+**By [Your Name]**
 
-
-</body>
-</html>
